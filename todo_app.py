@@ -1,6 +1,6 @@
 import sys
 
-class arg_reader():
+class ArgReader():
     def __init__(self):
         if len(sys.argv) == 1:
                print ("Python Todo application\n=======================\n\nCommand line arguments:\n-l   Lists all the tasks\n-a   Adds a new task\n-r   Removes an task\n-c   Completes an task")
@@ -20,6 +20,7 @@ class arg_reader():
         task_list = x.readlines()
         task_list = [i.replace('\n','') for i in task_list]
         task_list = [i.split('#') for i in task_list]
-        print(task_list)
+        for i in range (len(task_list)):
+            print((i+1), '-', (task_list[i][0]), task_list[i][1])
 
-print_usage = arg_reader()
+print_usage = ArgReader()
