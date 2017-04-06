@@ -20,7 +20,12 @@ class ArgReader():
         task_list = x.readlines()
         task_list = [i.replace('\n','') for i in task_list]
         task_list = [i.split('#') for i in task_list]
+
         for i in range (len(task_list)):
+            if task_list[i][0] == '1':
+                task_list[i][0] = '[x]'
+            else:
+                task_list[i][0] = '[ ]'
             print((i+1), '-', (task_list[i][0]), task_list[i][1])
 
 print_usage = ArgReader()
